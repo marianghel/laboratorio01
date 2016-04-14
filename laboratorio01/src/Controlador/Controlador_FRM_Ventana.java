@@ -65,7 +65,7 @@ public class Controlador_FRM_Ventana implements ActionListener{
          }else{
             this.ventana.Inexistente();
            
-          JOptionPane.showMessageDialog(null,"No se encontro automóvil");
+          JOptionPane.showMessageDialog(null,"No se encontro datos");
         }
         }
     
