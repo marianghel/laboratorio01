@@ -8,7 +8,7 @@ public class MetodosAutos {
     String arreglo[];
 
     public MetodosAutos() {
-        arrayAutos= new ArrayList <Autos>();
+      arrayAutos= new ArrayList <Autos>();
       arreglo= new String [4];
     }
     
@@ -16,13 +16,12 @@ public class MetodosAutos {
         boolean encontro=false;
         for(int contador=0; contador<arrayAutos.size();contador++){
             if(arrayAutos.get(contador).getNumero().equals(numero)){
-                
-                arreglo[1]=arrayAutos.get(contador).getNombre();
+                System.out.println("el numero de registro es correcto, se procede a gurdar informacion del array al arreglo");
+               arreglo[0]=arrayAutos.get(contador).getNumero();
+               arreglo[1]=arrayAutos.get(contador).getNombre();
                arreglo[2]=arrayAutos.get(contador).getCedula();
                arreglo[3]=arrayAutos.get(contador).getPlaca();
                 encontro=true;
-            }else{
-                encontro=false;
             }
         }
         return encontro;
@@ -36,9 +35,13 @@ public class MetodosAutos {
         Autos temporal;
         temporal= new Autos(Informacion[0],Informacion[1],Informacion[2],Informacion[3]);
         arrayAutos.add(temporal);
-        arreglo=new String [2];
-    }
+        }
    
+    public void comprobarAgrega(){
+     Autos temporal;
+     temporal= arrayAutos.get(0);
+     System.out.println(temporal.getInformacion());
+    }
     
  
     public void modificar(String arreglo[]){

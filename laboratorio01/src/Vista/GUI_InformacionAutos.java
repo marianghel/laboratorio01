@@ -24,11 +24,11 @@ Controlador_FRM_Ventana controlador;
     }
     
     public void mostrarInformacion(String arreglo[]){
+        this.jt_Numero.setText(arreglo[0]);
         this.jt_Nombre.setText(arreglo[1]);
         this.jt_Cedula.setText(arreglo[2]);
-        this.jt_Placa.setText(arreglo[3]);
-       
-    }
+        this.jt_Placa.setText(arreglo[3]);  
+        }
     
     public void limpiarInterfaz(){
         this.jt_Nombre.setText("");
@@ -37,7 +37,18 @@ Controlador_FRM_Ventana controlador;
         this.jt_Placa.setText("");
     }
        
-
+    public void inicio(){
+        this.jt_Cedula.setEnabled(false);
+        this.jt_Nombre.setEnabled(false);
+        this.jt_Placa.setEnabled(false);
+        this.jt_Numero.setEnabled(true);
+    }
+public void habilitarEncontro(){
+      this.jt_Cedula.setEnabled(true);
+        this.jt_Nombre.setEnabled(true);
+        this.jt_Placa.setEnabled(true);
+        this.jt_Numero.setEnabled(false);
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -120,9 +131,9 @@ Controlador_FRM_Ventana controlador;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jt_NumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_NumeroActionPerformed
-        /* if(evt.getKeyCode()==10){
-            this.controlador.buscar();
-        }*/
+       if(evt.getKeyCode()==10){
+            this.controlador.consultar();
+        }
     }//GEN-LAST:event_jt_NumeroActionPerformed
 
 

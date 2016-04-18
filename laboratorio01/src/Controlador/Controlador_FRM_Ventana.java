@@ -36,12 +36,16 @@ public class Controlador_FRM_Ventana implements ActionListener{
         this.ventana.limpiarPantalla();
         this.ventana.mensaje("Informacion agregada");
         this.ventana.estadoInicial();
+        this.metodos.comprobarAgrega();
         }
               
         
         if(e.getActionCommand().equals("Modificar")){
          this.metodos.modificar(ventana.devolverInformacion());
          this.ventana.mensaje("Se modifico la informacion");
+         this.ventana.limpiarPantalla();
+          this.ventana.estadoInicial();
+         this.metodos.comprobarAgrega();
         }/*else{
             JOptionPane.showMessageDialog(null,"No se pudo modificar información");
 
@@ -50,14 +54,15 @@ public class Controlador_FRM_Ventana implements ActionListener{
          this.metodos.eliminar(ventana.devolverInformacion());
              this.ventana.estadoInicial();
          this.ventana.limpiarPantalla();
-         JOptionPane.showMessageDialog(null,"Los datos fuero eliminados correctamente");
-        }/*else{
+         this.ventana.mensaje("Los datos fuero eliminados correctamente");
+         }/*else{
              JOptionPane.showMessageDialog(null,"Los datos no se eliminaron, vuelva a intentar");
          }*/
    }
         public void consultar(){
          
         if(this.metodos.buscar(ventana.devolverNumero())){
+        System.out.println("numero de registro encontrado en el sistema");
         this.ventana.mostrarInformacion(metodos.getArregloInformacion());
         this.ventana.Existe();
       
@@ -65,7 +70,7 @@ public class Controlador_FRM_Ventana implements ActionListener{
          }else{
             this.ventana.Inexistente();
            
-          JOptionPane.showMessageDialog(null,"No se encontro datos");
+          this.ventana.mensaje("No se encontro datos, proceda a agregar la información");
         }
         }
     

@@ -5,7 +5,7 @@ import Controlador.Controlador_FRM_Ventana;
 import javax.swing.JOptionPane;
 
 public class FRM_Ventana extends javax.swing.JFrame {
-Controlador_FRM_Ventana controlador;
+ public Controlador_FRM_Ventana controlador;
     public FRM_Ventana() {
         initComponents();
        controlador= new Controlador_FRM_Ventana(this);
@@ -18,8 +18,7 @@ Controlador_FRM_Ventana controlador;
     
     public void mostrarInformacion(String arreglo[]){
        this.gUI_InformacionAutos1.mostrarInformacion(arreglo);
-       System.out.println("entro");
-    }
+       }
     public void mensaje(String mensaje){
          JOptionPane.showMessageDialog(null,mensaje);
     }
@@ -31,16 +30,18 @@ Controlador_FRM_Ventana controlador;
         this.gUI_InformacionAutos1.limpiarInterfaz();
     }
   public void Existe(){
-       this.gUI_InformacionAutos1.limpiarInterfaz();
+      this.gUI_InformacionAutos1.habilitarEncontro();
       this.gUI_Botones2.inhabilitarAgregar();
   }
   public void Inexistente(){
       this.gUI_InformacionAutos1.limpiarInterfaz();
       this.gUI_Botones2.habilitarAgregar();
+      this.gUI_InformacionAutos1. habilitarEncontro();
   }
   public void estadoInicial(){
       this.gUI_Botones2.inicio();
       this.gUI_InformacionAutos1.limpiarInterfaz();
+      this.gUI_InformacionAutos1.inicio();
   }
   
  

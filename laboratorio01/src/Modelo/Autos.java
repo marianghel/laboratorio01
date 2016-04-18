@@ -69,7 +69,9 @@ public class Autos {
         this.placa = placa;
     }
 
-   
+   public String getInformacion(){
+       return "   Numero registro: "+getNumero()+"  Nombre del dueño: "+getNombre()+"  Cedula del dueño:  "+getCedula()+"  placa del auto: "+getPlaca();
+   }
    
    
 }
