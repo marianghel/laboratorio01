@@ -47,7 +47,7 @@ public void habilitarEncontro(){
       this.jt_Cedula.setEnabled(true);
         this.jt_Nombre.setEnabled(true);
         this.jt_Placa.setEnabled(true);
-        this.jt_Numero.setEnabled(false);
+        this.jt_Numero.setEnabled(true);
 }
 
     @SuppressWarnings("unchecked")
@@ -69,9 +69,9 @@ public void habilitarEncontro(){
 
         jl_Numero.setText("Número de Registro");
 
-        jt_Numero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jt_NumeroActionPerformed(evt);
+        jt_Numero.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jt_NumeroKeyPressed(evt);
             }
         });
 
@@ -130,12 +130,12 @@ public void habilitarEncontro(){
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jt_NumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jt_NumeroActionPerformed
-       if(evt.getKeyCode()==10){
-            this.controlador.consultar();
-        }
-    }//GEN-LAST:event_jt_NumeroActionPerformed
-
+    private void jt_NumeroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jt_NumeroKeyPressed
+      if(evt.getKeyCode()==10){
+      this.controlador.consultar();
+      
+    }//GEN-LAST:event_jt_NumeroKeyPressed
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jl_Cedula;
