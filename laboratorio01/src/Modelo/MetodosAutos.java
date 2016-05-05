@@ -69,34 +69,15 @@ public void eliminar(String arreglo[]) {
        if(arrayAutos.size()==0){
       numero=1;
   }else{   
-           //for(int contador=0;contador<arrayAutos.size();contador++){
-           //if(arrayAutos.get(contador)!=null){
+         
         numero=arrayAutos.get(arrayAutos.size()-1).getCodigo(); 
-           //}
-           //}
-       // int codigo=Integer.parseInt(numero);
+         
         numero++;
-        //numero="";
        }
        return numero;
    }
   
    
-   /*public String devolverCodigo(){
-    String codigo="";
-    if(arrayMatricula.size()==0){
-        codigo="1";
-    }else{
-        for(int contador=0; contador<arrayMatricula.size(); contador++){
-            if(arrayMatricula.get(contador)!=null){
-                codigo=arrayMatricula.get(contador).getCodigo();
-            }
-        }
-        int numero=Integer.parseInt(codigo);
-        numero++;
-        codigo="";
-    }
-    return codigo;
-}*/
+   
             
 }
