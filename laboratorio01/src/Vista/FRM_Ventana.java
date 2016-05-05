@@ -10,8 +10,13 @@ public class FRM_Ventana extends javax.swing.JFrame {
         initComponents();
        controlador= new Controlador_FRM_Ventana(this);
        this.gUI_Botones2.agregarEventos(controlador);
+       this.gUI_InformacionAutos1.agregarControlador(controlador);
+       numeroConsecutivo();
     }
 
+    public void numeroConsecutivo(){
+        this.gUI_InformacionAutos1.colocarCodigo();
+    }
     public String devolverNumero(){
         return this.gUI_InformacionAutos1.numero();
     }
@@ -27,6 +32,7 @@ public class FRM_Ventana extends javax.swing.JFrame {
     }
     
     public void limpiarPantalla(){
+        numeroConsecutivo();
         this.gUI_InformacionAutos1.limpiarInterfaz();
     }
   public void Existe(){
@@ -55,7 +61,7 @@ public class FRM_Ventana extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(gUI_Botones2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
-        getContentPane().add(gUI_InformacionAutos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 10, -1, -1));
+        getContentPane().add(gUI_InformacionAutos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -9,7 +9,7 @@ public class MetodosAutos {
 
     public MetodosAutos() {
       arrayAutos= new ArrayList <Autos>();
-      arreglo= new String [4];
+      arreglo= new String [5];
     }
     
     public boolean buscar(String numero){
@@ -17,10 +17,11 @@ public class MetodosAutos {
         for(int contador=0; contador<arrayAutos.size();contador++){
             if(arrayAutos.get(contador).getNumero().equals(numero)){
                 System.out.println("el numero de registro es correcto, se procede a gurdar informacion del array al arreglo");
-               arreglo[0]=arrayAutos.get(contador).getNumero();
-               arreglo[1]=arrayAutos.get(contador).getNombre();
-               arreglo[2]=arrayAutos.get(contador).getCedula();
-               arreglo[3]=arrayAutos.get(contador).getPlaca();
+               arreglo[0]=""+arrayAutos.get(contador).getCodigo();
+                arreglo[1]=arrayAutos.get(contador).getNumero();
+               arreglo[2]=arrayAutos.get(contador).getNombre();
+               arreglo[3]=arrayAutos.get(contador).getCedula();
+               arreglo[4]=arrayAutos.get(contador).getPlaca();
                 encontro=true;
             }
         }
@@ -33,7 +34,7 @@ public class MetodosAutos {
 
     public void agregar(String Informacion[]){
         Autos temporal;
-        temporal= new Autos(Informacion[0],Informacion[1],Informacion[2],Informacion[3]);
+        temporal= new Autos(Integer.parseInt(Informacion[0]),Informacion[1],Informacion[2],Informacion[3],Informacion[4]);
         arrayAutos.add(temporal);
         }
    
@@ -46,29 +47,56 @@ public class MetodosAutos {
  
     public void modificar(String arreglo[]){
         for(int contador=0; contador<arrayAutos.size();contador++){
-            if(arrayAutos.get(contador).getNumero().equals(arreglo[0])){
-                arrayAutos.get(contador).setNombre(arreglo[1]);
-                arrayAutos.get(contador).setCedula(arreglo[2]);
-                arrayAutos.get(contador).setPlaca(arreglo[3]);
+            if(arrayAutos.get(contador).getNumero().equals(arreglo[1])){
+                arrayAutos.get(contador).setNombre(arreglo[2]);
+                arrayAutos.get(contador).setCedula(arreglo[3]);
+                arrayAutos.get(contador).setPlaca(arreglo[4]);
             }
         }
     }
     
 public void eliminar(String arreglo[]) {
      for(int contador=0; contador<arrayAutos.size();contador++){
-            if(arrayAutos.get(contador).getNumero().equals(arreglo[0])){
+            if(arrayAutos.get(contador).getNumero().equals(arreglo[1])){
                arrayAutos.remove(contador);
             }
       }
 }
 
-  /* public String numeroConsecutivo(String numero){
-  int numero=0;
-    for(int contador=0; contador<arrayAutos.size();contador++){ 
-        numero=contador;
+   public int numeroConsecutivo(){
+       //String numero="";
+       int numero=0;
+       if(arrayAutos.size()==0){
+      numero=1;
+  }else{   
+           //for(int contador=0;contador<arrayAutos.size();contador++){
+           //if(arrayAutos.get(contador)!=null){
+        numero=arrayAutos.get(arrayAutos.size()-1).getCodigo(); 
+           //}
+           //}
+       // int codigo=Integer.parseInt(numero);
+        numero++;
+        //numero="";
+       }
+       return numero;
+   }
+  
+   
+   /*public String devolverCodigo(){
+    String codigo="";
+    if(arrayMatricula.size()==0){
+        codigo="1";
+    }else{
+        for(int contador=0; contador<arrayMatricula.size(); contador++){
+            if(arrayMatricula.get(contador)!=null){
+                codigo=arrayMatricula.get(contador).getCodigo();
+            }
+        }
+        int numero=Integer.parseInt(codigo);
+        numero++;
+        codigo="";
     }
-    numero=+1;
-    return ""+numero;
-   }*/
+    return codigo;
+}*/
             
 }

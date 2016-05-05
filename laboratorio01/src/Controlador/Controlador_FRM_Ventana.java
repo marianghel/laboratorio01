@@ -75,9 +75,9 @@ public class Controlador_FRM_Ventana implements ActionListener{
         }
     
         
-         /*public void numeroConsecutivo(){
-             this.metodos.numeroConsecutivo();
-         }*/
+         public int NumeroSiguiente(){
+            return this.metodos.numeroConsecutivo();
+         }
    }
   
   

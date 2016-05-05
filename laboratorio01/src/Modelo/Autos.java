@@ -6,13 +6,23 @@ public class Autos {
    private String nombre;
    private String cedula;
    private String placa;
-   
- public Autos(String numero, String nombre, String cedula, String placa) {
+   private int codigo;
+
+    public Autos(int codigo,String numero, String nombre, String cedula, String placa ) {
+         this.codigo = codigo;
         this.numero = numero;
         this.nombre = nombre;
         this.cedula = cedula;
         this.placa = placa;
+       
     }
+   
+public int getCodigo(){
+    return codigo;
+}
+public void setCodigo(int codigo){
+    this.codigo=codigo;
+}
     /**
      * @return the numero
      */
@@ -70,7 +80,7 @@ public class Autos {
     }
 
    public String getInformacion(){
-       return "   Numero registro: "+getNumero()+"  Nombre del dueño: "+getNombre()+"  Cedula del dueño:  "+getCedula()+"  placa del auto: "+getPlaca();
+       return "codigo: "+getCodigo()+"   Numero registro: "+getNumero()+"  Nombre del dueño: "+getNombre()+"  Cedula del dueño:  "+getCedula()+"  placa del auto: "+getPlaca();
    }
    
    
